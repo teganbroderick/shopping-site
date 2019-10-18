@@ -77,7 +77,16 @@ def show_shopping_cart():
     # Make sure your function can also handle the case wherein no cart has
     # been added to the session
 
-    #melon_id = 
+    cart = session["cart"]
+    print('This is the cart dict!', cart)
+
+    for melon_key in cart.keys():
+        melon = melons.get_by_id(melon_key)
+        print("melon object:", melon)
+
+
+
+
 
     return render_template("cart.html")
 
